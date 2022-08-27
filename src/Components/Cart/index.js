@@ -2,6 +2,7 @@ import React from 'react';
 
 import CartItems from './components/CartItem';
 import CartHandle from './components/CartHandle';
+import "./styles.scss"
 
 const Cart = () => {
   return (
