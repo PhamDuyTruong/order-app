@@ -8,6 +8,8 @@ import LibraryBooksIcon from "@material-ui/icons/LibraryBooks";
 import StoreMallDirectoryIcon from "@material-ui/icons/StoreMallDirectory";
 import LoyaltyIcon from "@material-ui/icons/Loyalty";
 
+import "./BurgerNavbar.scss"
+
 
 const BurgerNavbar = () => {
   return (
