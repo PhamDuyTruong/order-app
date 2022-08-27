@@ -4,6 +4,7 @@ import { Button } from '@material-ui/core';
 import DeleteOutlineIcon from '@material-ui/icons/DeleteOutline';
 import ExitToAppOutlinedIcon from '@material-ui/icons/ExitToAppOutlined';
 import RadioOutlinedIcon from '@material-ui/icons/RadioOutlined';
+import "./styles.scss"
 
 
 const Wishlist = () => {
