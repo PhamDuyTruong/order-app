@@ -15,6 +15,8 @@ import Logo from 'assets/images/logo-food.jpg';
 
 import BurgerNavbar from './BurgerNavbar';
 import Cart from '../Cart';
+import Wishlist from '../Wishlist';
+import Dialog from '../Dialog';
 
 const Header = () => {
   return (
@@ -69,7 +71,8 @@ const Header = () => {
        />
 
        <Cart />
-       
+        <Wishlist />
+        <Dialog />
     </>
   )
 }
