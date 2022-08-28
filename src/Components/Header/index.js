@@ -13,7 +13,7 @@ import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 
 import "./styles.scss"
 
-import Logo from 'assets/images/logo-food.jpg';
+import Logo from '../../assets/images/logo-food.jpg';
 
 import BurgerNavbar from './BurgerNavbar';
 import Cart from '../Cart';

@@ -3,8 +3,8 @@ import gsap from "gsap";
 import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
 import { Container } from "@material-ui/core";
 
-import CommonButton from '../../../../src/Components/CommonButton';
-import HandleImage from '../../../../src/Components/Banner/HandleImage';
+import CommonButton from '../../../../Components/CommonButton';
+import HandleImage from '../../../../Components/Banner/HandleImage';
 import "./Banner.scss"
 
 const Banner = (props) => {

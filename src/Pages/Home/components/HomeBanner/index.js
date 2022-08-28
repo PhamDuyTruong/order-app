@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import Banner from './Banner';
-import {BannersData} from "../../../../src/utils/fakeData"
+import {BannersData} from "../../../../utils/fakeData"
 import "./styles.scss"
 
 const HomeBanner = () => {
