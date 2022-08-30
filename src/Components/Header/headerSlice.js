@@ -20,4 +20,4 @@ const headerSlice = createSlice({
 
 const {reducer, actions} = headerSlice;
 export const {setIsCheckout, setIsShowCart} = actions;
-export default headerSlice;
+export default reducer;
