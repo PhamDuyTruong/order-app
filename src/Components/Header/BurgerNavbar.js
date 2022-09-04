@@ -1,5 +1,7 @@
 import React from 'react';
+import { useDispatch } from "react-redux";
 
+import {setIsShowWishList} from '../../Components/Wishlist/wishlistSlice';
 import { Avatar } from "@material-ui/core";
 
 import HomeIcon from "@material-ui/icons/Home";
@@ -11,12 +13,22 @@ import LoyaltyIcon from "@material-ui/icons/Loyalty";
 import "./BurgerNavbar.scss"
 
 
-const BurgerNavbar = () => {
+const BurgerNavbar = (props) => {
+    const {isShow, showBurgerNav, handleLogOut, handleLogin} = props;
+    const dispatch = useDispatch();
+    const openWishList = () =>{
+        const action = setIsShowWishList(true);
+        dispatch(action);
+    };
+
+    const onHandleLogin = () =>{
+
+    }
   return (
     <div className='burger-nav'>
-        <div className='burger-nav__content'>
+        <div className={ isShow ? "burger-nav__content active" : "burger-nav__content"}>
             <div className='burger-nav__top'>
-                <div className='burger-nav__account'>
+                <div className='burger-nav__account' onClick={onHandleLogin}>
                     <Avatar className='burger-nav__icon'/>
                     <div className='burger-nav__username'></div>
                 </div>
@@ -39,14 +51,13 @@ const BurgerNavbar = () => {
                     Location
                 </li>
             </ul>
-            <div className='burger-nav__favor'>
+            <div onClick={openWishList} className='burger-nav__favor'>
                 <LoyaltyIcon />
                 <span>Your wishlist</span>
             </div>
 
         </div>
-        <span className='burger-nav__overlay'>
-
+        <span className={ isShow ? "burger-nav__overlay active" : "burger-nav__overlay"} onClick={showBurgerNav}>
         </span>
     </div>
   )
