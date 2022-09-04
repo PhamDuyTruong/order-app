@@ -6,8 +6,11 @@ import StoreMallDirectoryIcon from "@material-ui/icons/StoreMallDirectory";
 import PrimaryButton from '../../../PrimaryButton';
 import "./styles.scss";
 
+import usePrice from '../../../../hooks/usePrice';
+
 const CartHandle = () => {
    const [isActive, setIsActive] = useState(false);
+   const {totalPrice, discount} = usePrice();
    const toggleDropUp = () =>{
       setIsActive(!isActive);
    };
@@ -19,20 +22,20 @@ const CartHandle = () => {
           <h3 className="cart-handle__detail-title">Information</h3>
           <div className='cart-handle__row'>
              <span className='cart-handle__label'>Discount</span>
-             <span className='cart-handle__content'></span>
+             <span className='cart-handle__content'>${discount}</span>
           </div>
           <div className='cart-handle__row'>
              <span className='cart-handle__label'>Shipping Cost</span>
-             <span className='cart-handle__content'></span>
+             <span className='cart-handle__content'>Free</span>
           </div>
           <div className='cart-handle__row'>
              <span className='cart-handle__label'>Voucher</span>
-             <span className='cart-handle__content'></span>
+             <span className='cart-handle__content'>None</span>
           </div>
        </div>
        <div className='cart-handle__total'>
             <span className='cart-handle__txt'>Total</span>
-            <span className='cart-handle__price'></span>
+            <span className='cart-handle__price'>${totalPrice}</span>
        </div>
 
        <div className='cart-handle__btns'>
