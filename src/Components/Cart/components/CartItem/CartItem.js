@@ -6,20 +6,25 @@ import DeleteOutlineIcon from "@material-ui/icons/DeleteOutline";
 import AddIcon from "@material-ui/icons/Add";
 import RemoveIcon from "@material-ui/icons/Remove";
 
-const CartItem = () => {
+import HandleImage from '../../../Banner/HandleImage';
+
+
+const CartItem = (props) => {
+   const {product} = props;
+   const {id, img,  name, price, qnt} = product;
   return (
-    <div className='cart-item'>
+    <div id={id} className='cart-item'>
         <div className='cart-item__img'>
-            <img src="" alt="Cart"/>
+            <img src={HandleImage(img)} alt="Cart"/>
         </div>
         <div className='cart-item__content'>
-            <div className='cart-item__name'></div>
-            <div className='cart-item__price'></div>
+            <div className='cart-item__name'>{name}</div>
+            <div className='cart-item__price'>${price}</div>
             <div className='cart-item__handle'>
                 <Button>
                     <RemoveIcon />
                 </Button>
-                <span className='cart-item__qnt'></span>
+                <span className='cart-item__qnt'>{qnt}</span>
                 <Button>
                     <AddIcon />
                 </Button>
