@@ -4,6 +4,7 @@ import { useHistory } from 'react-router-dom';
 
 import foodApi from '../apis/foodApi';
 import {setShopProducts} from '../Pages/Shop/shopSlice';
+import {PrevFilterContext} from './PrevFilterContext';
 import {PHONE_BREAKPOINT} from '../constants/breakpoint';
 import queryString from 'query-string';
 
@@ -16,7 +17,7 @@ const ApiProvider = ({children}) =>{
 
     const dispatch = useDispatch();
     const history = useHistory();
-
+    const {handlePrevious} = useContext(PrevFilterContext);
     const CheckIsAtPhone = () =>{
         if(window.innerWidth < PHONE_BREAKPOINT){
             setIsAtPhone(true);
@@ -43,7 +44,63 @@ const ApiProvider = ({children}) =>{
     }, []);
 
     const getProducts = async (type, params) =>{
-        
-    }
+        const {prevPrice, prevRate, prevSearch} = handlePrevious;
+        const currentPagination = params && params.hasOwnPropery('_page') && params['_page'];
 
-}
+        const valueWithPage = currentPagination && (prevPrice || JSON.parse(prevRate) || prevSearch);
+        try{
+            setIsLoading(true);
+            const response = await foodApi.getAll(
+                type, 
+                isAtPhone ? {
+                    ...params,
+                    ...valueWithPage
+                }
+                : {
+                    _limit: 16,
+                    ...params,
+                    ...valueWithPage
+                }
+
+            );
+
+            const action = setShopProducts(response);
+            dispatch(action);
+            setIsLoading(false);
+            currentPagination ? setPaginationActive(Number(currentPagination) - 1) : setPaginationActive(0);
+
+            history.push({
+                pathname: type,
+                search: queryString.stringify(
+                    isAtPhone ? {
+                        ...params,
+                        ...valueWithPage
+                    } : {
+                        _limit: 16,
+                        ...params,
+                        ...valueWithPage
+                    }
+                )
+            })
+        }catch(e){
+            console.log(e.message);
+        }
+    };
+
+    return (
+        <ApiContext.Provider
+           value={{
+             isLoading,
+             getProducts,
+             totalRows,
+             paginationActive
+           }}
+        >
+            {children}
+        </ApiContext.Provider>
+    )
+
+};
+
+export {ApiContext};
+export default ApiProvider;
