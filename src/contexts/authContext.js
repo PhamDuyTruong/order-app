@@ -18,8 +18,8 @@ function AuthProvider({children}){
     useEffect(() =>{
         const unsubscribed = auth.onAuthStateChanged((user) =>{
             if(user){
-                const {displayName, email, uid, photoUrl} = user;
-                setUser({displayName, email, uid, photoUrl});
+                const {displayName, email, uid, photoURL} = user;
+                setUser({displayName, email, uid, photoURL});
                 addToFirestore(uid);
                 if(pathname.includes("login")){
                     history.push("/home");

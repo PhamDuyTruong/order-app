@@ -14,7 +14,7 @@ import PermContactCalendarIcon from '@material-ui/icons/PermContactCalendar';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 
 import "./styles.scss";
-
+import {AuthContext} from '../../contexts/authContext';
 import { auth } from '../../config/firebaseConfig';
 import {setIsShowCart, setIsCheckout} from './headerSlice';
 import {setIsShowWishList} from '../Wishlist/wishlistSlice'
@@ -34,7 +34,7 @@ const Header = () => {
 
     const history = useHistory();
     const dispatch = useDispatch();
-
+    const {user, setUser, hasHeader} = useContext(AuthContext);
     const cartProducts = useSelector((state) => state.cart);
     const {isAtCheckout} = useSelector((state) => state.header);
     const showBurgerNav = () =>{
@@ -54,13 +54,14 @@ const Header = () => {
 
     const handleLogOut = () =>{
         auth.signOut().then(() =>{
-            
+            setUser(false);
         })
     };
 
     const toggleCart = () =>{
         const action = setIsShowCart(true);
-
+        user && dispatch(action);
+        !user && setIsShowDialog(true);
     };
 
     const toggleWishList = () =>{
@@ -122,12 +123,36 @@ const Header = () => {
                             <ShoppingCartIcon />
                             <div className='navbar__cart-qnt'>0</div>
                         </div>
-                        <div className='navbar__account' onClick={handleLogin}>
-                           <Avatar />
-                           <div className='navbar__username navbar__username--sign-out'>
-                            Sign In
-                           </div>
-                        </div>
+                        {
+                            user ? (
+                                <div>
+                                    <Avatar src={user.photoURL}/>
+                                    <div className='navbar__username'>{user.displayName}</div>
+                                    <ul className='navbar__account-options'>
+                                        <li className='navbar__account-option'>
+                                            <PermContactCalendarIcon />
+                                            <span>My Account</span>
+                                        </li>
+                                        <li className='navbar__account-option' onClick={toggleWishList}>
+                                            <LoyaltyOutlinedIcon />
+                                            <span>My wishlist</span>
+                                        </li>
+                                        <li className='navbar__account-option' onClick={handleLogOut}>
+                                            <ExitToAppIcon />
+                                            <span>Logout</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            ) : (
+                                <div className='navbar__account' onClick={handleLogin}>
+                                    <Avatar />
+                                <div className='navbar__username navbar__username--sign-out'>
+                                   Sign In
+                                </div>
+                             </div>
+                            )
+                        }
+                      
                     </div>
                     
                 </div>
@@ -135,10 +160,11 @@ const Header = () => {
        </header>
 
        <BurgerNavbar 
-         isShow = {isShowBurger}
-         showBurgerNav = {showBurgerNav}
-         handleLogOut = {handleLogOut}
-         handleLogin = {handleLogin}
+         isShow={isShowBurger}
+         showBurgerNav={showBurgerNav}
+         handleLogOut={handleLogOut}
+         handleLogin={handleLogin}
+         user={user}
        />
 
        <Cart />
