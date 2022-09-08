@@ -14,7 +14,7 @@ import "./BurgerNavbar.scss"
 
 
 const BurgerNavbar = (props) => {
-    const {isShow, showBurgerNav, handleLogOut, handleLogin} = props;
+    const {isShow, showBurgerNav, handleLogOut, handleLogin, user} = props;
     const dispatch = useDispatch();
     const openWishList = () =>{
         const action = setIsShowWishList(true);
@@ -22,7 +22,10 @@ const BurgerNavbar = (props) => {
     };
 
     const onHandleLogin = () =>{
-
+        if(!user){
+            handleLogin();
+            showBurgerNav();
+        }
     }
   return (
     <div className='burger-nav'>
@@ -32,6 +35,11 @@ const BurgerNavbar = (props) => {
                     <Avatar className='burger-nav__icon'/>
                     <div className='burger-nav__username'></div>
                 </div>
+                {user && (
+                     <div onClick={handleLogOut} className="burger-nav__logout">
+                         Log Out
+                     </div>
+                )}
             </div>
             <ul className='burger-nav__list'>
                 <li className='burger-nav__item'>
