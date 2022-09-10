@@ -1,8 +1,10 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import "./styles.scss";
 import { useHistory, useParams } from 'react-router-dom';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
+import useFirestoreProducts from '../../hooks/useFirestoreProducts';
+import {AuthContext} from '../../contexts/authContext'
 
 import StarIcon from '@material-ui/icons/Star';
 import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
@@ -14,9 +16,31 @@ const FoodProducts = (props) => {
     const params = useParams();
     const history = useHistory();
 
+    const {user} = useContext(AuthContext);
+    const {addToFirestore} = useFirestoreProducts;
+
+    const handleAddToFirestore = (type) =>{
+        const productInfo = {id, name, img, dsc, price, rate, country};
+        if(!user){
+            openDialog();
+            return;
+        }
+        addToFirestore(user.uid, {
+            type,
+            productInfo,
+            action: "increase"
+        })
+    };
+
+    const handleToDetail = (id) => {
+        history.push(`/shop/${params.name}/${id}`);
+        moveToTop && moveToTop();
+      };
+    
+ 
   return (
     <div id={id} className="shop-product">
-        <div className='shop-product__img-wrapper'>
+        <div   onClick={() => handleToDetail(id)} className='shop-product__img-wrapper'>
             <LazyLoadImage  
                effect='blur'
                src={img}
@@ -32,7 +56,7 @@ const FoodProducts = (props) => {
             </div>
         </div>
 
-        <div className='shop-product__content'>
+        <div  onClick={() => handleToDetail(id)} className='shop-product__content'>
             <div className='shop-product__name'>{name}</div>
             <p className='shop-product__description'>{dsc}</p>
             <div className='shop-product__row'>
@@ -45,10 +69,10 @@ const FoodProducts = (props) => {
         </div>
 
         <div className='shop-product__btns'>
-            <div className='shop-product__btn'>
+            <div  onClick={() => handleAddToFirestore('wishlist')} className='shop-product__btn'>
                 <FavoriteBorderIcon />
             </div>
-            <div className='shop-product__btn'>
+            <div  onClick={() => handleAddToFirestore('success')} className='shop-product__btn'>
                 <ShoppingCartOutlinedIcon />
             </div>
         </div>
