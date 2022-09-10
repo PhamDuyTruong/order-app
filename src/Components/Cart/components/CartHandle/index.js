@@ -3,7 +3,7 @@ import React, {useState} from 'react';
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import StoreMallDirectoryIcon from "@material-ui/icons/StoreMallDirectory";
 
-import PrimaryButton from '../../../PrimaryButton';
+import CommonButton from '../../../CommonButton';
 import "./styles.scss";
 
 import usePrice from '../../../../hooks/usePrice';
@@ -40,21 +40,21 @@ const CartHandle = () => {
 
        <div className='cart-handle__btns'>
            {/* Primary Button */}
-           <PrimaryButton
+           <CommonButton
               page="checkout"
               subClass="red cart-handle__btn"
               className="cart-handle__btn cart-handle__btn--checkout"
            >
                <ShoppingCartIcon />
                <span>Checkout</span>
-           </PrimaryButton>
-           <PrimaryButton
+           </CommonButton>
+           <CommonButton
               page="shop"
               subClass="cart-handle__btn"
            >
                <StoreMallDirectoryIcon />
                 <span>Buy more</span>
-           </PrimaryButton>
+           </CommonButton>
        </div>
     </div>
   )
