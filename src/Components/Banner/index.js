@@ -10,7 +10,7 @@ const Banner = () => {
   const paramsName = name.replace("-", " ");
   return (
     <section className='banner'  style={{ backgroundImage: `url(${HandleImage(CommonBannerImg)})` }}>
-        <h2 className='banner__title'></h2>
+        <h2 className='banner__title'>{name}</h2>
         <div className='banner__paths'>
             <span className='banner__path'>Home</span>
             <LinearScaleIcon />
