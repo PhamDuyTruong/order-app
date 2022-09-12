@@ -4,7 +4,8 @@ import { useHistory, useParams } from 'react-router-dom';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import useFirestoreProducts from '../../hooks/useFirestoreProducts';
-import {AuthContext} from '../../contexts/authContext'
+import {AuthContext} from '../../contexts/authContext';
+import Message from '../Message';
 
 import StarIcon from '@material-ui/icons/Star';
 import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
@@ -29,7 +30,8 @@ const FoodProducts = (props) => {
             type,
             productInfo,
             action: "increase"
-        })
+        });
+        Message(type);
     };
 
     const handleToDetail = (id) => {
