@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {useSelector} from 'react-redux'
 import "./style.scss";
+import ShopProducts from './ShopProducts'
 
 
 const ShopContent = () => {
@@ -9,7 +10,7 @@ const ShopContent = () => {
 
   return (
     <div className='shop-content'>
-        
+        <ShopProducts isFlex={isFlex}/>
     </div>
   )
 }
