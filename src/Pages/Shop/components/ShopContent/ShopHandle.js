@@ -31,7 +31,7 @@ const dataFake = [
 ];
   
 
-const ShopHandle = () => {
+const ShopHandle = (props) => {
   const [inputValue, setInputValue] = useState('');
   const [isDrop, setIsDrop] = useState(false);
 
