@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
 import {useSelector} from 'react-redux'
 import "./style.scss";
-import ShopProducts from './ShopProducts'
+import ShopProducts from './ShopProducts';
+import ShopHandle from './ShopHandle';
 
 
 const ShopContent = () => {
