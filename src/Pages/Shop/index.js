@@ -6,7 +6,8 @@ import {AuthContext} from '../../contexts/authContext';
 import { Container } from '@material-ui/core';
 
 import Banner from '../../Components/Banner';
-import ShopContent from '../Shop/components/ShopContent'
+import ShopContent from '../Shop/components/ShopContent';
+import ShopFilter from '../Shop/components/ShopFilter';
 
 
 
@@ -45,6 +46,7 @@ const Shop = () => {
         <Container>
             <div className='shop__container'>
                {/* Content shop products */}
+               <ShopFilter />
                <ShopContent />
             </div>
         </Container>
