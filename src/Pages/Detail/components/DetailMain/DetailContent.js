@@ -2,6 +2,7 @@ import React, {useContext, useState} from 'react';
 import "./DetailContent.scss";
 
 import {AuthContext} from '../../../../contexts/authContext';
+import useFirestoreComments from '../../../../hooks/useFirestoreComments'
 import { Button } from '@material-ui/core';
 
 import StarIcon from '@material-ui/icons/Star';
@@ -35,6 +36,7 @@ const DetailContent = (props) => {
 
       const { name, country, dsc, rate } = product ? product : '';
       const { handleOptionChange, handleIncreaseQnt, handleDecreaseQnt } =handleFuncs;
+      const {comments} = useFirestoreComments();
       const {user} = useContext(AuthContext);
 
   return (
@@ -42,4 +44,4 @@ const DetailContent = (props) => {
   )
 }
 
-export default DetailContent
+export default DetailContent;
