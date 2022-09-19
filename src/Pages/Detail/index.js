@@ -8,6 +8,7 @@ import { Container } from '@material-ui/core';
 import { Grid } from '@material-ui/core';
 
 import Banner from '../../Components/Banner';
+import DetailImage from './components/DetailImage';
 import DetailProducts from './components/DetailProducts';
 import DetailMain from './components/DetailMain';
 
@@ -38,7 +39,7 @@ const Detail = () => {
             <section className='detail__container'>
                 <Grid container spacing={6}>
                     <Grid item xs={12} md={6}>
-
+                        <DetailImage product={selectedProduct}/>
                     </Grid>
                     <Grid xs={12} md={6}>
                           <DetailMain product={selectedProduct}/>
