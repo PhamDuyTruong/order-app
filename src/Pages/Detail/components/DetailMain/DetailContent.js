@@ -153,7 +153,7 @@ const DetailContent = (props) => {
 
         <div className="detail-content__commits">
           <div className="detail-content__commit">
-            <LocalOfferOutlinedIcon />
+            <LocalShippingOutlinedIcon />
             <span>Free global shipping on all orders</span>
           </div>
           <div className="detail-content__commit">

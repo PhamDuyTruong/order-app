@@ -8,6 +8,8 @@ import { Container } from '@material-ui/core';
 import { Grid } from '@material-ui/core';
 
 import Banner from '../../Components/Banner';
+import DetailProducts from './components/DetailProducts';
+import DetailMain from './components/DetailMain';
 
 
 const Detail = () => {
@@ -39,10 +41,11 @@ const Detail = () => {
 
                     </Grid>
                     <Grid xs={12} md={6}>
-                        
+                          <DetailMain product={selectedProduct}/>
                     </Grid>
                 </Grid>
             </section>
+            <DetailProducts />
         </Container>
     </div>
   )
