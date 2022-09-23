@@ -8,7 +8,10 @@ const Shop = lazy(() => import("../Pages/Shop"));
 const Detail = lazy(() => import("../Pages/Detail"));
 const NotFound = lazy(() => import("../Components/NotFound"));
 const FAQ = lazy(() => import("../Components/FAQ"));
-const About = lazy(() => import("../Components/About"))
+const About = lazy(() => import("../Components/About"));
+const Privacy = lazy(() => import("../Components/Privacy"));
+const Term = lazy(() => import("../Components/Terms"));
+const Disclaimer = lazy(() => import("../Components/Disclaimer"))
 
 const RoutesConfig = [
     {
@@ -40,6 +43,21 @@ const RoutesConfig = [
         exact: true,
         path: PATH_NAMES.ABOUT,
         component: About
+    },
+    {
+        exact: true,
+        path: PATH_NAMES.PRIVACY,
+        component: Privacy
+    },
+    {
+        exact: true,
+        path: PATH_NAMES.TERM,
+        component: Term
+    },
+    {
+        exact: true,
+        path: PATH_NAMES.DISCLAIMER,
+        component: Disclaimer
     },
     {
         component: NotFound

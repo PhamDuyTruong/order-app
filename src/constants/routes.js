@@ -7,5 +7,7 @@ export const PATH_NAMES = {
     CHECKOUT: "/checkout",
     FAQ: "/faq",
     ABOUT:"/about",
-     
+    PRIVACY: "/privacy",
+    TERM: "/term",
+    DISCLAIMER: "/dis",
 }

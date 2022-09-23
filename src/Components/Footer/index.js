@@ -31,13 +31,13 @@ const Footer = () => {
                         Legal
                     </h2>
                     <div className={style.LinksContainer}>
-                        <Link className={`${style.Link} ${style.TextLink}`} to="/">
+                        <Link className={`${style.Link} ${style.TextLink}`} to="/term">
                             Terms & Conditions
                         </Link>
-                        <Link className={`${style.Link} ${style.TextLink}`} to="/">
+                        <Link className={`${style.Link} ${style.TextLink}`} to="/privacy">
                             Privacy Policy
                         </Link>
-                        <Link className={`${style.Link} ${style.TextLink}`} to="/">
+                        <Link className={`${style.Link} ${style.TextLink}`} to="/dis">
                             Disclaimer
                         </Link>
                     </div>
