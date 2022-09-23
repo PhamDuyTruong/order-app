@@ -9,6 +9,8 @@ import HomeProduct from './components/HomeProduct';
 import HomeAnalyst from './components/HomeAnalyst';
 import HomeReview from './components/HomeReview';
 
+import Footer from '../../Components/Footer'
+
 const Home = () => {
   return (
     <>
@@ -20,6 +22,7 @@ const Home = () => {
        <HomeProduct />
        <HomeAnalyst />
        <HomeReview />
+       <Footer />
     </>
   )
 }

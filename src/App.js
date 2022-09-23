@@ -15,7 +15,6 @@ import 'react-toastify/dist/ReactToastify.min.css';
 import { ThemeProvider } from '@material-ui/core/styles';
 
 import Header from './Components/Header';
-import Footer from './Components/Footer';
 import ScrollButton from './Components/ScrollButton';
 import "./App.scss";
 function App() {
@@ -37,7 +36,6 @@ function App() {
            </AuthProvider>
         </BrowserRouter>
         <ScrollButton />
-        {/* <Footer /> */}
         <ToastContainer />
     </ThemeProvider>
   );

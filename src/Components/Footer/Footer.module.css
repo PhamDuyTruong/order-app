@@ -10,6 +10,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	font-size: 16px;
 }
 
 .FooterSection {
@@ -20,6 +21,7 @@
 	margin-right: auto;
 	display: flex;
 	flex-direction: column;
+	font-size: 16px;
 }
 
 .TextLink {
