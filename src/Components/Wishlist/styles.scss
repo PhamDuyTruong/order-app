@@ -1,5 +1,5 @@
-@import "assets/styles/color";
-@import "assets/styles/mixins";
+@import "../../assets/styles/color";
+@import "../../assets/styles/mixins";
 
 .wishlist{
     position: fixed;
@@ -56,7 +56,7 @@
         margin-left: 7px;
       }
       &__top button svg {
-        color: $primary-white-color;
+        color: $white-color;
         font-size: 1.6rem;
       }
      &__title{
@@ -128,7 +128,7 @@
     }
   
     &__name:hover {
-      color: $primary-red-color;
+      color: $red-color;
     }
   
     &__description {
@@ -140,7 +140,7 @@
       -webkit-box-orient: vertical;
       -webkit-line-clamp: 1;
   
-      color: $primary-grey-color;
+      color: $grey-color;
     }
   
     &__price {
@@ -148,7 +148,7 @@
       font-size: 1.4rem;
       margin: 8px 0 9px;
   
-      color: $primary-red-color;
+      color: $red-color;
     }
   
     & button {

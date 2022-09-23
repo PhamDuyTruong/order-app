@@ -5,7 +5,7 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 
 import { Container } from '@material-ui/core';
 
-import NotFoundImg from '../../assets/images/NotFound/404.svg';
+import NotFoundImg from '../../assets/images/404.svg';
 
 const NotFound = () => {
   return (

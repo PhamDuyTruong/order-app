@@ -1,5 +1,5 @@
-@import "assets/styles/color";
-@import "assets/styles/mixins";
+@import "../../assets/styles/color";
+@import "../../assets/styles/mixins";
 
 .banner{
     display: flex;
@@ -44,17 +44,17 @@
     }
     @media (hover: hover) {
         &__path:hover {
-          color: $primary-red-color;
+          color: $red-color;
     
           cursor: pointer;
         }
       }
     
       &__path.active {
-        color: $primary-red-color;
+        color: $red-color;
       }
     
       svg {
-        fill: $primary-white-color;
+        fill: $white-color;
       }
 }

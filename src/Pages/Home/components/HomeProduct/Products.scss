@@ -1,5 +1,5 @@
-@import "assets/styles/color";
-@import "assets/styles/mixins";
+@import "../../../../assets/styles/color";
+@import "../../../../assets/styles/mixins";
 
 .home-product{
     text-align: center;
@@ -9,7 +9,7 @@
     transition: all 0.35s ease-in-out;
     
   @include respond(mobile) {
-    background-color: rgba($primary-red-color, 0.25);
+    background-color: rgba($red-color, 0.25);
   }
 
   @include respond(phone) {
@@ -17,7 +17,7 @@
   }
 
   &:hover {
-    background-color: rgba($primary-red-color, 0.25);
+    background-color: rgba($red-color, 0.25);
 
     @include respond(desktop) {
       transform: translateY(-5px);
@@ -76,7 +76,7 @@
         margin-left: auto;
         margin-right: auto;
   
-        background-color: $primary-white-color;
+        background-color: $white-color;
       }
   }
   .btn span{

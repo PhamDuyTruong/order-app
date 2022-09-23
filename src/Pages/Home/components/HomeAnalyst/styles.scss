@@ -1,5 +1,5 @@
-@import "assets/styles/color";
-@import "assets/styles/mixins";
+@import "../../../../assets/styles/color";
+@import "../../../../assets/styles/mixins";
 
 .home-analysis{
     display: flex;
@@ -47,7 +47,7 @@
         transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
     }
     &__content:hover &__content-text {
-        background-color: $primary-red-color;
+        background-color: $red-color;
       }
     &__content-name{
         font-size: 2.5rem;

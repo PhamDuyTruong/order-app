@@ -1,5 +1,5 @@
-@import "assets/styles/color";
-@import "assets/styles/mixins";
+@import "../../../../assets/styles/color";
+@import "../../../../assets/styles/mixins";
 
 .home-reviews{
     position: relative;
@@ -105,7 +105,7 @@
     
         width: 1.6rem;
         height: 1.6rem;
-        border: 2px solid $primary-yellow-color;
+        border: 2px solid $yellow-color;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     
         &:before {
@@ -121,7 +121,7 @@
           opacity: 0;
           transition: 0.3s ease-in-out;
     
-          background-color: $primary-yellow-color;
+          background-color: $yellow-color;
         }
     
         &-active:before {

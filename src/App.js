@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 import Theme from './utils/CustomUI';
 import ApiProvider from './contexts/apiContext';
 import AuthProvider from './contexts/authContext';
@@ -26,7 +26,7 @@ function App() {
 
   return (
     <ThemeProvider theme={Theme}>
-        <Router>
+        <BrowserRouter>
            <AuthProvider>
                <PrevFilterProvider>
                    <ApiProvider>
@@ -35,9 +35,9 @@ function App() {
                    </ApiProvider>
                </PrevFilterProvider>
            </AuthProvider>
-        </Router>
+        </BrowserRouter>
         <ScrollButton />
-        <Footer />
+        {/* <Footer /> */}
         <ToastContainer />
     </ThemeProvider>
   );

@@ -1,12 +1,12 @@
-import { Lazy } from "react";
+import { lazy } from "react";
 import {Redirect} from 'react-router-dom';
 
 import {PATH_NAMES} from '../constants/routes';
 
-const Home = Lazy(() => import("../Pages/Home"));
-const Shop = Lazy(() => import("../Pages/Shop"));
-const Detail = Lazy(() => import("../Pages/Detail"));
-const NotFound = Lazy(() => import("../Components/NotFound"));
+const Home = lazy(() => import("../Pages/Home"));
+const Shop = lazy(() => import("../Pages/Shop"));
+const Detail = lazy(() => import("../Pages/Detail"));
+const NotFound = lazy(() => import("../Components/NotFound"));
 
 const RoutesConfig = [
     {

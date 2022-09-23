@@ -1,5 +1,5 @@
-@import "assets/styles/color";
-@import "assets/styles/mixins";
+@import "../../../../assets/styles/color";
+@import "../../../../assets/styles/mixins";
 
 .home-category{
     position: relative;
@@ -77,7 +77,7 @@
         &:hover {
           box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
     
-          background-color: $primary-red-color;
+          background-color: $red-color;
         }
      svg{
         fill: rgba($black-color, 0.7);

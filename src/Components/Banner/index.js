@@ -2,7 +2,7 @@ import React from 'react';
 import "./styles.scss";
 import { useParams } from 'react-router-dom';
 import LinearScaleIcon from "@material-ui/icons/LinearScale";
-import CommonBannerImg from "assets/images/banner.jpg";
+import CommonBannerImg from "../../assets/images/banner.jpg";
 import HandleImage from './HandleImage';
 
 const Banner = () => {

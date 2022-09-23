@@ -13,7 +13,7 @@ import StepFour from "../assets/images/step-4.jpg";
 
 import IngredientsThumb from "../assets/images/ingredients.jpg";
 import ShapeOne from "../assets/images/shape-1.png";
-import ShapeTwo from "../assets/images/Home/shape-2.png";
+import ShapeTwo from "../assets/images/shape-2.png";
 
 
 import ProductOne from "../assets/images/product-1.png";
