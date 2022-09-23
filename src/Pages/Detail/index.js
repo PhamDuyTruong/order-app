@@ -11,7 +11,7 @@ import Banner from '../../Components/Banner';
 import DetailImage from './components/DetailImage';
 import DetailProducts from './components/DetailProducts';
 import DetailMain from './components/DetailMain';
-
+import DetailTab from './components/DetailTab';
 
 const Detail = () => {
   const {name, id} = useParams();
@@ -46,6 +46,7 @@ const Detail = () => {
                     </Grid>
                 </Grid>
             </section>
+            <DetailTab />
             <DetailProducts />
         </Container>
     </div>
