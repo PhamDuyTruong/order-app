@@ -21,7 +21,7 @@ body {
   overflow-x: hidden;
 
   color: $primary-black-color;
-  background-color: $primary-white-color;
+  background-color: $white-color;
 
   .MuiContainer-root {
     padding: 0 75px;
@@ -37,7 +37,7 @@ body {
 }
 
 strong {
-  color: $primary-red-color;
+  color: $red-color;
 }
 
 a {

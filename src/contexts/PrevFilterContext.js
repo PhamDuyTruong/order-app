@@ -1,7 +1,8 @@
 import {createContext, useState} from "react";
 export const PrevFilterContext = createContext();
 
-function PrevFilterProvider({children}){
+function 
+PrevFilterProvider({children}){
      const [prevName, setPrevName] = useState(null);
      const [prevPrice, setPrevPrice] = useState(null);
      const [prevRate, setPrevRate] = useState(null);
