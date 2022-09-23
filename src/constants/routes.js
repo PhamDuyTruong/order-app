@@ -4,5 +4,8 @@ export const PATH_NAMES = {
     LOGIN: "/login",
     SHOP: "/shop/:name",
     DETAIL: "/shop/:name/:id",
-    CHECKOUT: "/checkout"
+    CHECKOUT: "/checkout",
+    FAQ: "/faq",
+    ABOUT:"/about",
+     
 }

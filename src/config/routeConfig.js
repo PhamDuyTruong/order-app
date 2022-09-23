@@ -7,6 +7,8 @@ const Home = lazy(() => import("../Pages/Home"));
 const Shop = lazy(() => import("../Pages/Shop"));
 const Detail = lazy(() => import("../Pages/Detail"));
 const NotFound = lazy(() => import("../Components/NotFound"));
+const FAQ = lazy(() => import("../Components/FAQ"));
+const About = lazy(() => import("../Components/About"))
 
 const RoutesConfig = [
     {
@@ -28,6 +30,16 @@ const RoutesConfig = [
         exact: true,
         path: PATH_NAMES.DETAIL,
         component: Detail
+    },
+    {
+        exact: true,
+        path: PATH_NAMES.FAQ,
+        component: FAQ
+    },
+    {
+        exact: true,
+        path: PATH_NAMES.ABOUT,
+        component: About
     },
     {
         component: NotFound

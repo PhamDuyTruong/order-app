@@ -14,10 +14,10 @@ const Footer = () => {
                         Company
                     </h2>
                     <div className={style.LinksContainer}>
-                        <Link className={`${style.Link} ${style.TextLink}`} to="/">
+                        <Link className={`${style.Link} ${style.TextLink}`} to="/about">
                             About Us
                         </Link>
-                        <Link className={`${style.Link} ${style.TextLink}`} to="/">
+                        <Link className={`${style.Link} ${style.TextLink}`} to="/faq">
                             FAQ
                         </Link>
                         <a className={`${style.Link} ${style.TextLink}`} href="mailto:no-mail@email.com">
