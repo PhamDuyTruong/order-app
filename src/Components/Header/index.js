@@ -1,6 +1,6 @@
 import React, {useEffect, useState, useContext} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 import { Container, Avatar } from '@material-ui/core';
 
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
@@ -100,11 +100,11 @@ const Header = () => {
                         <ul className='navbar__list'>
                             <li className='navbar__item'>
                                 <HomeIcon />
-                                Homepage
+                                <Link to={"/home"} style={{color: "white"}}>Homepage</Link>
                             </li>
                             <li className='navbar__item'>
                                 <RestaurantMenuIcon />
-                                Order online
+                                <Link to={"/shop/best-foods"} style={{color: "white"}}>Order Online</Link>
                             </li>
                             
                             <li className='navbar__item'>
