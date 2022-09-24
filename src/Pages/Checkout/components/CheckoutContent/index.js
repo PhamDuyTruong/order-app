@@ -5,6 +5,9 @@ import "./style.scss";
 import {BackgroundIconBlurOne, BackgroundIconBlurTwo, BackgroundIconBlurThree, BackgroundIconBlurFour} from '../../../../utils/BgIcons';
 import BgIcon from '../../../../Components/BgIcon';
 
+import CheckoutAside from './CheckoutAside';
+import CheckoutProgress from './CheckoutProgress';
+
 
 const CheckoutContent = () => {
     const [isCheckoutSuccess, setIsCheckoutSuccess] = useState(false);
@@ -15,10 +18,11 @@ const CheckoutContent = () => {
   return (
     <div className='checkout-content'>
         <div className='checkout-content__left'>
-            
+            <CheckoutProgress isCheckoutSuccess={isCheckoutSuccess}/>
 
         </div>
         <div className='checkout-content__right' style={{ paddingTop: cartProducts.length > 0 ? "95px" : "60px" }}>
+        <CheckoutAside />
         <BgIcon
           src={BackgroundIconBlurOne}
           width="25"
