@@ -9,12 +9,14 @@ import CheckoutAside from './CheckoutAside';
 import CheckoutProgress from './CheckoutProgress';
 import CheckoutForm from './CheckoutForm';
 import CheckoutUserInfo from './CheckoutUserInfo';
+import CheckoutSuccess from '../CheckoutSuccess';
 
 const CheckoutContent = () => {
     const [isCheckoutSuccess, setIsCheckoutSuccess] = useState(false);
     const [isBuy, setIsBuy] = useState(false);
     const cartProducts = useSelector((state) => state.cart);
-
+    
+    if(isBuy) return <CheckoutSuccess />
 
   return (
     <div className='checkout-content'>
