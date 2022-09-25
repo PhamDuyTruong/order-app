@@ -7,7 +7,8 @@ import BgIcon from '../../../../Components/BgIcon';
 
 import CheckoutAside from './CheckoutAside';
 import CheckoutProgress from './CheckoutProgress';
-
+import CheckoutForm from './CheckoutForm';
+import CheckoutUserInfo from './CheckoutUserInfo';
 
 const CheckoutContent = () => {
     const [isCheckoutSuccess, setIsCheckoutSuccess] = useState(false);
@@ -19,7 +20,8 @@ const CheckoutContent = () => {
     <div className='checkout-content'>
         <div className='checkout-content__left'>
             <CheckoutProgress isCheckoutSuccess={isCheckoutSuccess}/>
-
+            <CheckoutUserInfo />
+            <CheckoutForm setIsCheckoutSuccess={setIsCheckoutSuccess} setIsPurchased={setIsBuy}/>
         </div>
         <div className='checkout-content__right' style={{ paddingTop: cartProducts.length > 0 ? "95px" : "60px" }}>
         <CheckoutAside />
