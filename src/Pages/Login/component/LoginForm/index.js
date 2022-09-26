@@ -10,7 +10,6 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 
 import CommonButton from "../../../../Components/CommonButton";
-import HandleImage from "../../../../Components/Banner/HandleImage";
 import "./style.scss";
 import Message from "../../../../Components/Message";
 import LoginFormField from "./LoginFormField";
