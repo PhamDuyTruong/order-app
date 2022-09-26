@@ -4,8 +4,6 @@ import { googleProvider, auth } from "../../config/firebaseConfig";
 import { AuthContext } from "../../contexts/authContext";
 import { Button, Container } from "@material-ui/core";
 
-import FacebookIcon from "@material-ui/icons/Facebook";
-
 import LoginThumbSvg from "../../assets/images/thumb.svg";
 import googleSvg from "../../assets/images/google.svg";
 
