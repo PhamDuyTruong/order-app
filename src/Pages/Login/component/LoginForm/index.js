@@ -13,6 +13,7 @@ import CommonButton from "../../../../Components/CommonButton";
 import HandleImage from "../../../../Components/Banner/HandleImage";
 import "./style.scss";
 import Message from "../../../../Components/Message";
+import LoginFormField from "./LoginFormField";
 
 const schema = yup.object().shape({
   email: yup
@@ -32,7 +33,7 @@ const schema = yup.object().shape({
 });
 
 const LoginForm = () => {
-  const { register, handleSubmit, reset } = useForm({
+  const { register, handleSubmit, reset, formState: { errors }, } = useForm({
     resolver: yupResolver(schema),
   });
 
@@ -45,7 +46,23 @@ const LoginForm = () => {
   };
   return (
     <form onSubmit={handleSubmit(onHandleSubmit)} className="form-login">
-        
+      <LoginFormField
+            icon={<MailOutlineIcon />}
+            name="email"
+            label="Email address"
+            placeholder="Your email"
+            register={register}
+            errors={errors}
+      >
+      <LoginFormField
+        icon={<LockOutlinedIcon />}
+        name="password"
+        label="Password"
+        placeholder="Your password"
+        register={register}
+        errors={errors}
+      />
+      </LoginFormField>    
       <div className="form-login__commit">
         <Checkbox color="primary" className="form-login__commit-checkbox" />
         <span className="form-login__commit-msg">Save your password</span>
