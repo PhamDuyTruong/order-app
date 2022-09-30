@@ -2,26 +2,35 @@ import React, {useContext, useEffect} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {db} from '../../config/firebaseConfig';
 import {addToCart} from './cartSlice';
+import {AuthContext} from '../../contexts/authContext';
 import {setIsShowCart} from '../Header/headerSlice';
 import CartItems from './components/CartItem';
 import CartHandle from './components/CartHandle';
 import EmptyCart from '../EmptyCart';
-import EmptyCartImg from '../../assets/images/empty-cart.svg'
+import EmptyCartImg from '../../assets/images/empty-cart.svg';
+
 import "./styles.scss";
 
 const Cart = () => {
   const {isShowCart} = useSelector((state) => state.header);
   const cartProducts = useSelector((state) => state.cart);
   const dispatch = useDispatch();
-
+  const {user} = useContext(AuthContext);
   const closeCart = () =>{
     const action = setIsShowCart(false);
     dispatch(action);
   };
 
   useEffect(() =>{
-
-  })
+      if(user){
+        db.collection("users").doc(user.uid).onSnapshot((doc) => {
+            if(doc.data()){
+                const action = addToCart(doc.data().cart);
+                dispatch(action);
+            }
+        })
+      }
+  }, [user, dispatch]);
 
   return (
     <div className={isShowCart ? 'cart active' : 'cart'}>
