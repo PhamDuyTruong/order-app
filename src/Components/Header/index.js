@@ -121,7 +121,7 @@ const Header = () => {
                     <div className='navbar--right'>
                         <div className='navbar__cart' onClick={toggleCart}>
                             <ShoppingCartIcon />
-                            <div className='navbar__cart-qnt'>0</div>
+                            <div className='navbar__cart-qnt'>{user ? total : 0}</div>
                         </div>
                         {
                             user ? (
