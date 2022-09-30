@@ -5,7 +5,7 @@ import {AuthContext} from '../../contexts/authContext';
 import {setIsCheckout} from '../../Components/Header/headerSlice';
 
 import CheckoutBanner from './components/CheckoutBanner';
-
+import CheckoutContent from './components/CheckoutContent';
 
 const Checkout = () => {
   const dispatch = useDispatch();
