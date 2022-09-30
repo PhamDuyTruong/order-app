@@ -41,7 +41,7 @@ const Detail = () => {
                     <Grid item xs={12} md={6}>
                         <DetailImage product={selectedProduct}/>
                     </Grid>
-                    <Grid xs={12} md={6}>
+                    <Grid item xs={12} md={6}>
                           <DetailMain product={selectedProduct}/>
                     </Grid>
                 </Grid>
