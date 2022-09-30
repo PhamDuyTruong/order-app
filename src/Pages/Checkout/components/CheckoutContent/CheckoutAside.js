@@ -1,5 +1,5 @@
 import React from 'react';
-import {useSelector} from 'react-router'
+import {useSelector} from 'react-redux'
 import "./CheckoutAside.scss";
 
 import usePrice from '../../../../hooks/usePrice';
