@@ -6,6 +6,7 @@ import {setIsCheckout} from '../../Components/Header/headerSlice';
 
 import CheckoutBanner from './components/CheckoutBanner';
 import CheckoutContent from './components/CheckoutContent';
+import CheckoutLogin from './components/CheckoutLogin';
 
 const Checkout = () => {
   const dispatch = useDispatch();
@@ -19,6 +20,7 @@ const Checkout = () => {
   return (
     <div className='checkout'>
         <CheckoutBanner />
+        {user ? <CheckoutContent /> : <CheckoutLogin />}
     </div>
   )
 }
