@@ -11,7 +11,9 @@ const FAQ = lazy(() => import("../Components/FAQ"));
 const About = lazy(() => import("../Components/About"));
 const Privacy = lazy(() => import("../Components/Privacy"));
 const Term = lazy(() => import("../Components/Terms"));
-const Disclaimer = lazy(() => import("../Components/Disclaimer"))
+const Disclaimer = lazy(() => import("../Components/Disclaimer"));
+
+const Login = lazy(() => import("../Pages/Login"));
 
 const RoutesConfig = [
     {
@@ -33,6 +35,11 @@ const RoutesConfig = [
         exact: true,
         path: PATH_NAMES.DETAIL,
         component: Detail
+    },
+    {
+        exact: true,
+        path: PATH_NAMES.LOGIN,
+        component: Login
     },
     {
         exact: true,
