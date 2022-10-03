@@ -1,107 +1,136 @@
 @import "../../assets/styles/color";
 @import "../../assets/styles/mixins";
 
-.navbar{
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 100;
-    padding: 8px 0;
-    margin-top: 5px;
-    width: 100%;
-    transition: 0.2s ease-out;
-    @include respond(mobile) {
-        padding: 5px 0;
-        display: none;
-    }
-    .hamburger-btn{
-        display: none;
-        width: 3.3rem;
-        height: 3.3rem;
-        fill: $white-color;
-        cursor: pointer;
-        @include respond(mobile) {
-            display: block;
-        }
-    }
-&__link{
-    cursor: pointer;
-}
-&__container{
-    display: flex;
-    align-items: center;
-    @include respond(mobile) {
-        justify-content: space-between;
-    }
-}
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 900;
 
-&__container.checkout{
-    justify-content: center;
-}
-&__container.checkout > *:not(&__link) {
+  padding: 8px 0;
+  margin-top: 5px;
+  width: 100%;
+
+  transition: 0.2s ease-out;
+
+  @include respond(mobile) {
+    padding: 5px 0;
     display: none;
-}
-&--left, &--right{
+  }
+
+  .hamburger-btn {
+    display: none;
+    width: 3.3rem;
+    height: 3.3rem;
+
+    fill: $white-color;
+
+    cursor: pointer;
+
+    @include respond(mobile) {
+      display: block;
+    }
+  }
+
+  &__link {
+    cursor: pointer;
+  }
+
+  &__container {
     display: flex;
     align-items: center;
-}
-&--left {
+
+    @include respond(mobile) {
+      justify-content: space-between;
+    }
+  }
+
+  &__container.checkout {
+    justify-content: center;
+  }
+
+  &__container.checkout > *:not(&__link) {
+    display: none;
+  }
+
+  &--left,
+  &--right {
+    display: flex;
+    align-items: center;
+  }
+
+  &--left {
     @include respond(mobile) {
       display: none;
     }
-}
-&--right {
+  }
+
+  &--right {
     margin-left: auto;
     transform: translateX(-8px);
 
     @include respond(mobile) {
       margin-left: unset;
     }
-}
-&__logo{
+  }
+
+  &__logo {
     height: 4.8rem;
+
     @include respond(mobile) {
-        height: 4rem;
-     }
-}
-&__list{
+      height: 4rem;
+    }
+  }
+
+  &__list {
     display: flex;
     margin-left: 15px;
-}
-&__item{
+  }
+
+  &__item {
     display: flex;
     align-items: center;
     list-style: none;
     font-size: 1.4rem;
     padding: 3px;
     margin: 0 8px;
+
     color: $white-color;
+
     transition: 0.2s ease-out;
+
     cursor: pointer;
-}
-&__item svg{
+  }
+
+  &__item svg {
     width: 2rem;
     height: 2rem;
     margin-right: 5px;
-}
-&__item:hover{
+  }
+
+  &__item:hover {
     color: $red-color;
-}
-&__cart{
+  }
+
+  &__cart {
     position: relative;
     padding: 5px;
+
     cursor: pointer;
-}
-&__cart > svg {
+  }
+
+  &__cart > svg {
     font-size: 2.8rem;
 
     color: $white-color;
-}
-&__cart-qnt{
+  }
+
+  &__cart-qnt {
     position: absolute;
     bottom: 1px;
     right: -10px;
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -110,20 +139,26 @@
     padding: 1px 5px;
     border-radius: 44px;
     font-weight: 500;
+
     color: $white-color;
     background-color: $yellow-color;
-}
-&__account{
+  }
+
+  &__account {
     position: relative;
+
     display: flex;
     align-items: center;
     margin-left: 40px;
+
     cursor: pointer;
+
     @include respond(mobile) {
-        display: none;
+      display: none;
     }
-}
-&__account:after {
+  }
+
+  &__account:after {
     position: absolute;
     left: 0;
     bottom: -8px;
@@ -134,12 +169,15 @@
 
     background-color: transparent;
   }
-&__username{
+
+  &__username {
     font-size: 1.4rem;
-    margin-left:8.5px;
+    margin-left: 8.5px;
+
     color: $white-color;
-}
-&__username--signed-out {
+  }
+
+  &__username--signed-out {
     font-weight: 500;
   }
 
@@ -149,10 +187,12 @@
     visibility: visible;
     opacity: 1;
   }
+
   &__account-options {
-    position: relative;
-    top: 0;
+    position: absolute;
+    right: 0;
     top: 55px;
+
     padding: 7px 0;
     border-radius: 4px;
     width: max-content;
@@ -160,29 +200,36 @@
     border: 1px solid rgba(0, 0, 0, 0.15);
     visibility: hidden;
     opacity: 0;
-    background-color: $white-color;
-    transition: all .15s linear;
-  }
-  &__account-options:before {
-    content: "";
 
+    background-color: $white-color;
+
+    transition: all 0.15s linear;
+  }
+
+  &__account-options:before {
     position: absolute;
     right: 12px;
     top: -19.5px;
+
+    content: "";
+
     border-top: 10.5px solid transparent;
     border-left: 10.5px solid transparent;
     border-right: 10.5px solid transparent;
     border-bottom: 10.5px solid $white-color;
   }
 
-  &__account-option{
+  &__account-option {
     display: flex;
     align-items: center;
+
     font-size: 1.4rem;
     line-height: 1.8;
     padding: 6px 15px;
+
     transition: all 0.08s ease-out;
   }
+
   &__account-option:not(:last-child) {
     border-bottom: 1px solid rgba(0, 0, 0, 0.04);
   }
@@ -191,6 +238,7 @@
     background-color: rgba(0, 0, 0, 0.08);
     cursor: pointer;
   }
+
   &__account-option svg {
     margin-right: 5px;
     font-size: 1.8rem;
