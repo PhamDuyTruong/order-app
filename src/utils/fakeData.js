@@ -64,19 +64,19 @@ import {
       {
         img: StepTwo,
         step: "2",
-        content: "We Deliver it anywhere",
+        content: "Add To Cart",
         arrow: ArrowSecond,
       },
       {
         img: StepThree,
         step: "3",
-        content: "Cash on Delivery",
+        content: "We Can Delivery Anywhere",
         arrow: ArrowThree,
       },
       {
         img: StepFour,
         step: "4",
-        content: "Eat And Enjoy",
+        content: "Cash On Delivery",
       },
   ];
 
