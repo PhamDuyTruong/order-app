@@ -56,7 +56,7 @@ const HomeWork = () => {
                             <div ref={(el) => stepRef[index] = el} className="home-work__step">
                                 <div className='home-work__thumb'>
                                     <div className='home-work__thumb-wrapper'>
-                                        <img  className='home-work__img' src={HandleImage(img)} alt="image step">
+                                        <img  className='home-work__img' src={HandleImage(img)} alt="image step" width={200} height={200}>
                                         </img>
                                         <span>0{step} Step</span>
                                         <div
