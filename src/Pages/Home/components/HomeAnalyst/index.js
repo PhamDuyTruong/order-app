@@ -65,13 +65,13 @@ const HomeAnalyst = () => {
     });
 
     tl.from(arrNumRef[0], { opacity: 0, duration: 0.5 })
-      .counter(arrNumRef1[0], { end: 350 }, 0)
+      .counter(arrNumRef1[0], { end: 300 }, 0)
       .from(arrNumRef[1], { opacity: 0, duration: 0.5 }, 0)
-      .counter(arrNumRef1[1], { end: 2678 }, 0)
+      .counter(arrNumRef1[1], { end: 2537 }, 0)
       .from(arrNumRef[2], { opacity: 0, duration: 0.5 }, 0)
-      .counter(arrNumRef1[2], { end: 60 }, 0)
+      .counter(arrNumRef1[2], { end: 40 }, 0)
       .from(arrNumRef[3], { opacity: 0, duration: 0.5 }, 0)
-      .counter(arrNumRef1[3], { end: 30 }, 0);
+      .counter(arrNumRef1[3], { end: 50 }, 0);
   }, []);
 
   const handleModal = () =>{

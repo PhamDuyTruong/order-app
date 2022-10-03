@@ -231,24 +231,24 @@ import {
   const ReviewData = [
     {
         img: ReviewOne,
-        name: "mark zuckerberg",
-        role: "Co-founding Facebook, Inc",
+        name: "Bill Gates",
+        role: "Co-founding Microsoft corporation",
         comment:
-          "I chose food G because of their value And incredible superior customer Service they really awesome Food with quality service Ha of their value And incredible sup with quality",
+          "I chose DT food because of their value And incredible superior customer Service they really awesome Food with quality service Ha of their value And incredible sup with quality",
       },
       {
         img: ReviewTwo,
-        name: "Rose",
-        role: "Main vocalist of Backpink group",
+        name: "Thuy Tien",
+        role: "Miss Grand Vietnam 2021",
         comment:
           "Had dinner with girl friends. Menu is perfect, something for everyone. Service was awesome and Jason was very accommodating. Will be back definitely!",
       },
       {
         img: ReviewThree,
-        name: "Tim Cook",
-        role: "CEO of Apple",
+        name: "Messi",
+        role: "Legend of football",
         comment:
-          "I had lunch with some of my colleagues at Echo on Day 1. I had the wedge salad - it was delicious. On Night 2, I enjoyed a drink at the bar. I had a Margarita. The service was excellent",
+          "I had lunch with some of my colleagues at DT food on Day 1. I had the wedge salad - it was delicious. On Night 2, I enjoyed a drink at the bar. I had a Margarita. The service was excellent",
       },
   ]
 
