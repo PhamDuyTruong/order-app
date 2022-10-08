@@ -48,7 +48,7 @@ import {
       {
         className: "banner-rd",
         title: "Good food is life",
-        description: "The belly rules the",
+        description: "Stimulating the hungry stomach",
         strong: " mind",
         background: BannerThree,
       },
@@ -85,7 +85,7 @@ import {
         {
           title: "Mild Butter",
           content:
-            "Patak's Butter Chicken Mild is a creamy tomato and butter flavour curry sauce",
+            "Butter Chicken Mild is a creamy tomato and butter flavour curry sauce",
           order: "01",
         },
         {
